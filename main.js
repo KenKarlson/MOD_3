@@ -42,25 +42,37 @@ class Rect extends Figure {
   }
   move() {
     switch (this.positionX) {
-      case 450:
+      case 446:
+        moveUp = true;
+        break;
+      case 408:
         moveUp = true;
         break;
       case 0:
         moveUp = false;
         break;
+      case -1:
+        moveUp = false;
+        break;
     }
-    moveLeft ? this.positionY -= 1 : this.positionY += 1;
+    moveLeft ? this.positionY -= 1 : this.positionY += 2;
     rposition = this.position;
 
     switch (this.positionY) {
-      case 450:
+      case 446:
+        moveLeft = true;
+        break;
+      case 447:
         moveLeft = true;
         break;
       case 0:
         moveLeft = false;
         break;
+      case -1:
+        moveLeft = false;
+        break;
     }
-    moveUp ? this.positionX -= 1 : this.positionX += 2;
+    moveUp ? this.positionX -= 2 : this.positionX += 1;
   }
 }
 class Circle extends Figure {
@@ -72,6 +84,7 @@ class Circle extends Figure {
                 height: 50px;
                 border-radius: 50%;
                 background-color: orangered;
+                background-image: url(./img/header_b.png);
                 border: 1px solid #ccc;
                 box-shadow: 1px 1px 1px #333;
                 top: ${this.positionY}px;
@@ -81,10 +94,10 @@ class Circle extends Figure {
   }
   move() {
     switch (this.positionX) {
-      case 450:
+      case 446:
         moveLeft1 = true;
         break;
-      case 451:
+      case 447:
         moveLeft1 = true;
         break;
       case 0:
@@ -98,10 +111,13 @@ class Circle extends Figure {
         break;
 
     }
-    moveLeft1 ? this.positionX -= 2 : this.positionX += 1;
+    moveLeft1 ? this.positionX -= 1 : this.positionX += 2;
     cposition = this.positionX;
     switch (this.positionY) {
-      case 450:
+      case 446:
+        moveUp1 = true;
+        break;
+      case 447:
         moveUp1 = true;
         break;
       case 0:
@@ -114,7 +130,7 @@ class Circle extends Figure {
         moveUp1 = false;
         break;
     }
-    moveUp1 ? this.positionY -= 1 : this.positionY += 1;
+    moveUp1 ? this.positionY -= 2 : this.positionY += 1;
   }
 }
 const figures = [new Rect(), new Circle()];
