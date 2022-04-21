@@ -17,8 +17,6 @@ body {
 }
 
 .container-box {
-  margin: 0px auto;
-
   width: 500px;
   height: 500px;
   border: 2px solid rgb(58, 5, 108)
